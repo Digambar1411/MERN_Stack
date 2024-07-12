@@ -1,0 +1,23 @@
+*{
+  font-size: 10px;
+}
+
+.parent{
+  font-size: 20px;
+  background-color: aqua;
+}
+
+.child{
+  background-color: red;
+  font-size: 2em;   /*twice the size of parent element's font size so (20*2=40px)*/
+  padding: 0.5em; /* halft the size of its own element font-size so (40/2=20px)*/
+  width: 10em;   /* 40*10=400px*/
+}
+
+.rem-parent{
+  font-size: 2rem;
+  background-color: aqua;
+  width: 20rem;
+  height: 10rem;
+  margin-top: 2rem;
+}
