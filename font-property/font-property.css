@@ -1,0 +1,12 @@
+.my-text{
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-style: wavy;
+  font-family: "Playwrite GB S", cursive;
+  font-size: 24px;
+}
+
+.text{
+  font-weight: 600;
+}
