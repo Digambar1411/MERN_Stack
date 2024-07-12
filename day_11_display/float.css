@@ -1,0 +1,22 @@
+.parent{
+  background-color: red;
+  width:800px;
+  /* height: 400px; */
+  padding: 10px;
+}
+
+.child{
+  background-color: palegoldenrod;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+}
+
+
+.child1{
+float: left;
+}
+
+.child2{
+float: right;
+}

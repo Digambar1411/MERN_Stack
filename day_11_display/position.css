@@ -1,0 +1,33 @@
+body{
+  margin: 0;
+  height: 1800px;
+}
+
+.parent{
+  position: relative;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  margin-bottom: 400px;
+}
+
+.box{
+  background-color: red;
+  font-size: 20px;
+  border: 1px solid black;
+  left: 150px;
+  top: 50px;
+  position: fixed;
+  position: absolute;
+  position: relative;
+}
+
+.sticky{
+  background-color: red;
+  font-size: 20px;
+  border: 1px solid black;
+  position: fixed;
+  position: sticky;
+  top: 250px;
+}

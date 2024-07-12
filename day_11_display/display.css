@@ -1,0 +1,31 @@
+body{
+  margin: 0;
+}
+
+
+.box{
+  background-color: red;
+  font-size: 20px;
+  border: 1px solid black;
+}
+
+.block{
+  /* padding: 10px; */
+  display: block;
+  height: 100px;
+}
+
+.inline{
+  padding: 10px;   /* vertical padding moves element out of screen */
+  display: inline;
+  width: 100px;     /*cant apply*/  
+  height: 100px;  /*cant apply*/ 
+  margin: 10px;   /* can be applied only on left and right */
+}
+
+.inline-block{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  /* margin: 10px;   */
+}
