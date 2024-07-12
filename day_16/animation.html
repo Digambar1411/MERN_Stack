@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation</title>
+  <style>
+    .box{
+      background-color: rgb(77, 188, 184);
+      width: 300px;
+      height: 300px;
+      margin: 2rem auto;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .box:hover{
+      background-color: rgb(159, 10, 233);
+      animation: move 700ms ease-out 500ms;
+    }
+
+    @keyframes move {
+      0%{transform: rotate(0deg)}
+      25%{transform: rotate(180deg)}
+      75%{transform:rotate(300deg)}
+      100%{transform:rotate(0deg)}
+    }
+  </style>
+
+</head>
+
+<body>
+ 
+  <div class="box">
+    box
+  </div>
+  
+</body>
+</html>

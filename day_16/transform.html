@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>transform</title>
+		<style>
+			.box1,.box2,.box3,.box4 {
+				background-color: rgb(77, 188, 184);
+				width: 300px;
+				height: 300px;
+				margin: 2rem auto;
+				transition: all 500ms ease-in;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+			}
+
+			.box1:hover {
+        cursor:pointer;
+        transform: rotate(60deg);
+			}
+
+      .box2:hover{
+        cursor:pointer;
+				transform: scale(2);
+      }
+
+      .box3:hover{
+        cursor:pointer;
+				transform: skew(45deg);
+      }
+
+      .box4:hover{
+        transform: translate(200px);
+        transform: translate(200px, 100px);
+        transform: translatex(200px);
+      }
+		</style>
+	</head>
+
+	<body>
+		<div class="box1">rotate</div>
+		<div class="box2">scale</div>
+		<div class="box3">skew</div>
+		<div class="box4">transalate</div>
+	</body>
+</html>
