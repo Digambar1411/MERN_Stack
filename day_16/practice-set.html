@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Advance animation practice</title>
+	</head>
+
+	<style>
+		.card {
+			background-color: aqua;
+			width: 200px;
+			height: 300px;
+      margin: 2rem auto;
+    }
+
+		.card {
+			transition: transform 0.6s ease-in-out;
+		}
+
+		.card:hover {
+			transform: rotate(180deg);
+		}
+
+		.card:hover {
+			transform: scale(1.1);
+		}
+
+		.card:hover {
+			transform: translate(10px, 20px);
+		}
+
+		.card:hover {
+			transform: skew(10deg, 5deg);
+		}
+
+    /* animation */
+		.card:hover {
+      /* animation-name: flip;
+      animation-timing-function: ease-in-out;
+      animation-duration: 2s;
+      animation-delay: 0.5s;
+      animation-iteration-count: 3;
+      animation-direction: alternate; */
+
+			animation: flip 2s ease-in-out 0.5s 2 alternate;
+		}
+
+
+		@keyframes flip {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(180deg);
+			}
+		}
+	</style>
+	<body>
+		<div class="card">
+			<h2>back-side</h2>
+		</div>
+		</div>
+	</body>
+</html>
