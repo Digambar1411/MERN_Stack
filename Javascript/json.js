@@ -1,9 +1,22 @@
-const product = {
-	name: "t-shirt",
-	price: 500,
-	size: "M",
-};
+let count = localStorage.getItem('num') || 0;
 
-localStorage.setItem("prod", JSON.stringify(product));
-const fromLocalStorage = JSON.parse(localStorage.getItem("prod"));
-console.log("fromLocalStorage", fromLocalStorage.name);
+function incrementCount() {
+	count++;
+  localStorage.setItem('num',count);
+	updateBtnState();
+}
+
+function updateBtnState() {
+	let btnEl = document.querySelector("#btn");
+	let isEven = count % 2 === 0;
+	if (isEven) {
+		btnEl.classList.remove("odd");
+		btnEl.classList.add("even");
+	} else {
+		btnEl.classList.remove("even");
+		btnEl.classList.add("odd");
+	}
+	btnEl.innerText = count;
+}
+
+updateBtnState();

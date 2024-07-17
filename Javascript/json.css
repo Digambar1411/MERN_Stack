@@ -1,0 +1,17 @@
+.even{
+  background-color: aqua;
+}
+
+.odd{
+  background-color: red;
+}
+
+#btn{
+  display:block;
+  margin: 2rem auto;
+  padding: 8px;
+  width: 4.5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
