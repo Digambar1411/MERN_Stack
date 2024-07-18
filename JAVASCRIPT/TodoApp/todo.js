@@ -1,28 +1,24 @@
-const todoNameEl = document.getElementsByTagName("input")[0];
-const dateEl = document.getElementsByTagName("input")[1];
-
+const formEl = document.getElementById('todo-form');
+const todoNameEl = document.getElementById('todo-name');
+const dateEl = document.getElementById("due-date");
 const addBtnEl = document.getElementsByName("add-btn");
-
 const todoContainer = document.querySelector(".todo-container");
-const todoItem = document.querySelector(".todo-item");
-
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 const deleteTodo= (i)=>{
   todos.splice(i,1);
-  console.log('todos',todos);
   localStorage.setItem('todos', JSON.stringify(todos));
   displayTodo();
 }
 
-const addTodo = () => {
+const addTodo = (e) => {
+  e.preventDefault();
 	const todoName = todoNameEl.value;
 	const todoDate = dateEl.value;
 	let todo = { name: todoName, date: todoDate };
 	todos.push(todo);
   todoNameEl.value = "";
 	dateEl.value = "";
-	console.log("todos", todos);
   localStorage.setItem('todos', JSON.stringify(todos));
   displayTodo();
 };
@@ -39,5 +35,7 @@ const displayTodo =() =>{
   }
   todoContainer.innerHTML=displayHtml;
 }
+
+formEl.addEventListener('submit',addTodo);
 
 displayTodo();
