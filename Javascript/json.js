@@ -1,22 +1,23 @@
-let count = localStorage.getItem('num') || 0;
+let count = localStorage.getItem('incrementCount') || 0;
+let btnEl = document.querySelector('#btn');
 
-function incrementCount() {
-	count++;
-  localStorage.setItem('num',count);
-	updateBtnState();
+
+const updateState = (count) =>{
+  btnEl.innerText = count;
+
+  if(count%2===0){
+    btnEl.classList.add('even');
+    btnEl.classList.remove('odd');
+  }else{
+    btnEl.classList.add('odd');
+    btnEl.classList.remove('even');
+  }
 }
 
-function updateBtnState() {
-	let btnEl = document.querySelector("#btn");
-	let isEven = count % 2 === 0;
-	if (isEven) {
-		btnEl.classList.remove("odd");
-		btnEl.classList.add("even");
-	} else {
-		btnEl.classList.remove("even");
-		btnEl.classList.add("odd");
-	}
-	btnEl.innerText = count;
+const incrementCount = () =>{
+  count++;
+  localStorage.setItem('incrementCount',count);
+  updateState(count);
 }
 
-updateBtnState();
+updateState(count);
