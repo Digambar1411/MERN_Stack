@@ -1,0 +1,11 @@
+.btn{
+  width: 100px;
+  height: 100px;
+  font: 1.25rem;
+}
+
+.btn-twice{
+  width: 200px;
+  height: 200px;
+  font: 1.25rem;
+}
