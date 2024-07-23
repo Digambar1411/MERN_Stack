@@ -4,6 +4,7 @@ const addTwiceBtn = document.querySelector('#btn-add-twice');
 const resultEl = document.querySelector('#result');
 
 let bagItem = 0;
+resultEl.textContent = `your cart has ${bagItem} items.`
 
 const addItem = (item)=>{
   console.log('item', item);
@@ -20,12 +21,6 @@ if(bagItem>=1){
 }
 }
 
-const initialDisplay =()=>{
-  resultEl.textContent = `your cart has ${bagItem} items.`
-}
-
 addBtn.addEventListener('click',()=>addItem(1));
 addTwiceBtn.addEventListener('click',()=>addItem(2));
 wishlistBtn.addEventListener('click',()=>moveToWishlist());
-
-initialDisplay();
