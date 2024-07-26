@@ -15,7 +15,7 @@ const addTodo = (e) => {
   e.preventDefault();
 	const todoName = todoNameEl.value;
 	const todoDate = dateEl.value;
-	let todo = { name: todoName, date: todoDate };
+	let todo = { name: todoName, date: todoDate, isCompleted: false };
 	todos.push(todo);
   todoNameEl.value = "";
 	dateEl.value = "";
@@ -23,13 +23,25 @@ const addTodo = (e) => {
   displayTodo();
 };
 
+const markComplete =(index)=>{
+	for (let i = 0; i < todos.length; i++) {
+    if(i===index){
+      todos[i].isCompleted=true;
+    }
+  }
+  localStorage.setItem("todos", JSON.stringify(todos));
+	displayTodo();
+}
 
 const displayTodo =() =>{
   let displayHtml = "";
   for(let i=0; i<todos.length; i++){
-    const {name, date} = todos[i];
+    const {name, date,isCompleted } = todos[i];
 		displayHtml +=
-				`<span>${name}</span>
+				` <span class='flex-center ${isCompleted ? 'completed' : ''}' >
+            <input type='checkbox' onChange='markComplete(${i})' />
+          ${name}
+        </span>
 				<span>${date}</span>
 				<button onclick='deleteTodo(${i})' class='btn delete-btn'>delete</button>`
   }

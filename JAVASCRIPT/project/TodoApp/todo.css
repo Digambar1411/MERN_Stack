@@ -18,7 +18,7 @@ body{
   font-weight: bold;
   border-radius: 5px;
   color:white;
-  padding: 4px 6px;
+  padding: 6px 10px;
   cursor: pointer;
 }
 
@@ -26,13 +26,17 @@ body{
   background-color: green;
 }
 
+.complete-btn{
+  background-color: rgb(27, 27, 178);
+}
+  
 .delete-btn{
   background-color: rgb(105, 40, 40);
 }
 
 .grid-container{
   display: grid;
-  grid-template-columns: 1.5fr 0.75fr 100px;
+  grid-template-columns: 1.5fr 0.75fr 0.5fr;
   gap: 0.75rem;
   align-items: center;
 }
@@ -41,7 +45,23 @@ body{
   margin-top: 2rem;
 }
 
-input{
+input[type='text'],input[type='date']{
   margin-right: 1.5rem;
   padding: 4px;
+}
+
+input[type='checkbox']{
+  width: 18px;
+  height: 18px;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.completed{
+  text-decoration: line-through;
 }
