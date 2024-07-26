@@ -39,7 +39,7 @@ const displayTodo =() =>{
     const {name, date,isCompleted } = todos[i];
 		displayHtml +=
 				` <span class='flex-center ${isCompleted ? 'completed' : ''}' >
-            <input type='checkbox' onChange='markComplete(${i})' />
+            <input type='checkbox' onChange='markComplete(${i})' ${isCompleted ? 'checked' : ''} />
           ${name}
         </span>
 				<span>${date}</span>
