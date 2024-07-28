@@ -42,7 +42,7 @@ const displayTodo =() =>{
             <input type='checkbox' onChange='markComplete(${i})' ${isCompleted ? 'checked' : ''} />
           ${name}
         </span>
-				<span>${date}</span>
+				<span>Due date : ${date}</span>
 				<button onclick='deleteTodo(${i})' class='btn delete-btn'>delete</button>`
   }
   todoContainer.innerHTML=displayHtml;
