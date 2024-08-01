@@ -2,6 +2,13 @@ const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorBtn = document.querySelector("#scissor");
 const resultEl = document.querySelector('.result');
+const scoreEl = document.querySelector('.score')
+
+let score ={
+  my:0,
+  computer: 0,
+  tie: 0
+}
 
 const getResult = (myChoice, computerChoice) => {
 	let result;
@@ -11,16 +18,22 @@ const getResult = (myChoice, computerChoice) => {
 		(myChoice === 3 && computerChoice === 2)
 	) {
 		result = "I Won";
+    score.my++;
 	}
 	else if (myChoice === computerChoice) {
 		result = "It's tie";
+    score.tie++;
 	} else {
 		result = "You Won";
+    score.computer++;
 	}
 	return result;
 };
 
 const displayResult = (myChoice, computerChoice, result)=>{
+
+  scoreEl.innerHTML = `<div> I won : ${score.my}, You own: ${score.computer}, tie : ${score.tie}`;
+
   displayEl = 
   `<div> I choose  :<strong> ${myChoice} </strong><div>
   <div>You choose :<strong> ${computerChoice === 1 ? 'Rock' : computerChoice === 2 ? 'Paper' : 'Scissor'}</strong><div>
