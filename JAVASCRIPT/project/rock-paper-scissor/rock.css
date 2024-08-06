@@ -22,6 +22,9 @@
   font-size: 1.25rem;
   cursor: pointer;
 }
+.reset{
+  background-color: rgb(231, 56, 40);
+}
 
 .result{
   display: flex;
