@@ -1,0 +1,13 @@
+.even{
+  background-color: aqua;
+}
+
+.odd{
+  background-color: red;
+}
+
+.btn{
+  width:5rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
