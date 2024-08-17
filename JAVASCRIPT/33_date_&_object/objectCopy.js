@@ -1,4 +1,4 @@
-const person1 = {
+const person = {
   name: "John",
   age: 30,
   address: {
@@ -6,76 +6,26 @@ const person1 = {
       city: "New York",
       country: "USA"
   },
-  hobbies: ["reading", "traveling", "swimming"],
-  contact: {
-      phone: "123-456-7890",
-      email: "john@example.com"
-  }
 };
 
-const person2 = {
-  name: "John",
-  age: 30,
-  address: {
-      street: "123 Main St",
-      city: "New York",
-      country: "USA"
-  },
-  hobbies: ["reading", "traveling", "swimming"],
-  contact: {
-      phone: "123-456-7890",
-      email: "john@example.com"
-  }
-};
 
-const shallowCompare =(obj1,obj2) =>{
-  // check if both object have same reference 
-  if(obj1 === obj2) return true;
+ //shallow copy
+const copiedObject = person; 
+copiedObject.name='dig';
 
-  // check if both  are object and not null  
-  if(typeof obj1 !== 'object' || typeof obj2 !== 'object' || 
-    obj1 === null || obj2 === null ){
-    return false;
-  }
+console.log('original object',person);
+console.log('copied object using shallow copy',copiedPerson);
 
-  // compare no of properties 
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  if(keys1.length !== keys2.length) return false;
+// using rest 
+const copiedObjectUsingRest = {...copiedObject}
+
+// using object.assign
+const copyObject = Object.assign({}, person);
 
 
-  // comparare each property value 
-  for(let key of keys1){
-    if(obj1[key] !== obj2[key]) return false
-  }
+// deep copy using JSON 
+const copiedPerson = JSON.parse(JSON.stringify(person));  //deep copy
+copiedPerson.name='mahesh';
 
-  return true;
-}
-
-console.log(shallowCompare(person1, person2));
-
-const deepCompare =(obj1,obj2) =>{
-  // check if both object have same reference 
-  if(obj1 === obj2) return true;
-
-  // check if both  are object and not null  
-  if(typeof obj1 !== 'object' || typeof obj2 !== 'object' || 
-    obj1 === null || obj2 === null ){
-    return false;
-  }
-
-  // compare no of properties 
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  if(keys1.length !== keys2.length) return false;
-
-
-  // comparare each property value 
-  for(let key of keys1){
-    if(!keys2.includes(key) || !deepCompare(obj1[key], obj2[key])) return false;
-  }
-
-  return true;
-}
-
-console.log(deepCompare(person1, person2));
+console.log('original object',person);
+console.log('copied object using deep copy',copiedPerson);
