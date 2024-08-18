@@ -32,12 +32,12 @@ copiedObject.age=12;
 console.log('original object',person);
 console.log('copied object using reference assignment',copiedObject);
 
-//shallow copy using rest 
+//shallow copy using spread 
 const copiedObjectUsingRest = {...person2}
 copiedObjectUsingRest.age=12;
 copiedObjectUsingRest.address.country = 'ind';
 console.log('original object',person2);
-console.log('copied object using rest',copiedObjectUsingRest);
+console.log("copied object using spread", copiedObjectUsingRest);
 
 //shallow copy using object.assign
 const copyObject = Object.assign({}, person3);
