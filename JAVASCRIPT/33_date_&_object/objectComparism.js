@@ -5,11 +5,6 @@ const person1 = {
       street: "123 Main St",
       city: "New York",
       country: "USA"
-  },
-  hobbies: ["reading", "traveling", "swimming"],
-  contact: {
-      phone: "123-456-7890",
-      email: "john@example.com"
   }
 };
 
@@ -19,13 +14,8 @@ const person2 = {
   address: {
       street: "123 Main St",
       city: "New York",
-      country: "USA"
-  },
-  hobbies: ["reading", "traveling", "swimming"],
-  contact: {
-      phone: "123-456-7890",
-      email: "john@example.com"
-  }
+      country: "IND"
+  }  
 };
 
 const shallowCompare =(obj1,obj2) =>{
@@ -55,7 +45,7 @@ const shallowCompare =(obj1,obj2) =>{
 console.log(shallowCompare(person1, person2));
 
 const deepCompare =(obj1,obj2) =>{
-  // check if both object have same reference 
+  // check if both object have same reference or null also compare primitive values
   if(obj1 === obj2) return true;
 
   // check if both  are object and not null  
@@ -79,3 +69,19 @@ const deepCompare =(obj1,obj2) =>{
 }
 
 console.log(deepCompare(person1, person2));
+
+
+// check if objet
+if(obj1 === null || typeof(obj1) !== 'object' ) return false;
+
+const keys1 = Object.keys(obj1);
+const keys2 = Object.keys(obj2);
+
+if(keys1.length !== keys2.length) return false;
+
+for(let key of keys1){
+  if(!keys2.includes(key) || obj1[key] ) return false;
+}
+
+return true;
+
