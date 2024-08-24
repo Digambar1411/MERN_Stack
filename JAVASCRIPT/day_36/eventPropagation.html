@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Propagation Example</title>
+</head>
+<body>
+  <div id="parent" style="padding: 20px; background-color: lightblue;">
+    Parent Element
+    <button id="child" style="margin-top: 20px;">Child Element</button>
+  </div>
+
+  <script>
+    document.getElementById('parent').addEventListener('click', function(event) {
+      console.log('Parent element clicked');
+    },
+    // true // event capturing
+    );
+
+    document.getElementById('child').addEventListener('click', function(event) {
+      console.log('Child element clicked');
+      // event.stopPropagation(); // Uncomment this to see the effect
+    });
+  </script>
+</body>
+</html>
